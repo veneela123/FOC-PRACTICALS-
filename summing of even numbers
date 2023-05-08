@@ -1,0 +1,18 @@
+INPUT-
+#include<stdio.h>
+int main()
+{
+	int n,sum=0;
+	printf("enter the value of n");
+	scanf("%d",&n);
+	for ( int i=2; i<=n; i++)
+	{
+		sum += i;
+    }
+    printf("the even values of 1 is %d is %d",n,sum);
+    return 0;
+}
+
+OUTPUT-
+enter the value of n5
+the even values of 1 is 5 is 14
