@@ -1,0 +1,19 @@
+INPUT-
+#include<stdio.h>
+int main()
+{
+	int n,i,sum;
+	sum=0;
+	printf("enter the number number:");
+	scanf("%d",&n);
+	for(i=1; i<=n; i+=2)
+	{
+	sum +=i*i;
+    }    
+	printf("the number series of %d",sum);
+	return 0;
+}
+
+OUTPUT-
+enter the number number:7
+the number series of 84
