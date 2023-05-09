@@ -1,0 +1,18 @@
+INPUT-
+include<stdio.h>
+int main()
+{
+	int n,i,sum=0;
+	printf("enter the number n:");
+	scanf("%d",&n);
+	for(i=1; i<=n; i++)
+	{
+		sum +=i*i;
+	}
+	printf("enter the series %d",sum);
+	return 0;
+}
+
+OUTPUT-
+enter the number n:4
+enter the series 30
