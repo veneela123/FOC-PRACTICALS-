@@ -1,0 +1,20 @@
+INPUT- #include <stdio.h>
+
+int main() {
+   int n;
+
+   printf("Enter an integer number: ");
+   scanf("%d", &n);
+
+   if(n % 2 == 0) {
+      printf("%d is an even number", n);
+   } else {
+      printf("%d is an odd number", n);
+   }
+
+   return 0;
+}
+
+OUTPUT-
+Enter an integer number: 45
+45 is an odd number
