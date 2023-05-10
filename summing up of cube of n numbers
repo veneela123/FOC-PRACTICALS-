@@ -1,0 +1,20 @@
+INPUT-
+#include<stdio.h>
+int main()
+{
+	int n,i,sum=0;
+	printf("enter the number of integers of cube :");
+	scanf("%d",&n);
+	for (i=1; i<=n; i++){
+		sum=i*i*i;
+	}
+		
+	printf("enter the cube of the %d is %d\n",n,sum);
+	
+	
+	return 0;
+}
+
+OUTPUT-
+enter the number of integers of cube :5
+enter the cube of the 5 is 125
