@@ -1,0 +1,25 @@
+INPUT-
+#include <stdio.h>
+
+int main() {
+    int a,b,temp;
+    printf("enter the value of a");
+    scanf("%d",&a);
+    printf("enter the value of b");
+    scanf("%d",&b);
+    printf("the numbers a=%d b=%d\n",a,b);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("the swapping up of the numbersa=%d b=%d\n",a,b);
+    return 0;
+}
+
+OUTPUT-
+enter the value of a4
+enter the value of b5
+the numbers a=4 b=5
+the swapping up of the numbersa=5 b=4
+
+    
+    
