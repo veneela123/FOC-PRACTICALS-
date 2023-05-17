@@ -1,0 +1,38 @@
+INPUT-
+#include <stdio.h>
+
+double exp_series(double x, int n);
+
+int main() {
+    double x, result;
+    int n;
+
+    printf("Enter the value of x: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    result = exp_series(x, n);
+
+    printf("e^(-%.2f) = %f\n", x, result);
+
+    return 0;
+}
+
+double exp_series(double x, int n) {
+    double term = 1.0, sum = 1.0;
+    int i;
+
+    for (i = 1; i < n; i++) {
+        term *= -x / i;
+        sum += term;
+    }
+
+    return sum;
+}
+
+OUTPUT-
+Enter the value of x: 4
+Enter the number of terms: 3
+e^(-4.00) = 5.000000
