@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    double originalPrice, salePrice;
+    int day;
+
+    printf("Enter the original price of the item: ");
+    scanf("%lf", &originalPrice);
+
+    salePrice = originalPrice;
+
+    printf("Day 1: %.2f\n", salePrice);
+
+    for (day = 2; day <= 5; day++) {
+        salePrice *= 0.9;  // Reduce the price by 10% (multiply by 0.9)
+        printf("Day %d: %.2f\n", day, salePrice);
+    }
+
+    return 0;
+}
+
+OUTPUT-
+Enter the original price of the item: 6000
+Day 1: 6000.00
+Day 2: 5400.00
+Day 3: 4860.00
+Day 4: 4374.00
+Day 5: 3936.60
