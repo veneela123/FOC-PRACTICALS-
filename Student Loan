@@ -1,0 +1,92 @@
+INPUT-
+#include <stdio.h>
+
+int main() {
+    float loanAmount = 3000.0; // Initial loan amount
+    float monthlyPayment = 85.0; // Maximum monthly payment
+    float interestRate = 0.01; // 1% interest rate per month
+    float balance = loanAmount; // Initial balance
+    int months = 0; // Number of months
+    int years = 0; // Number of years
+    float totalInterest = 0.0; // Total interest paid
+
+    // Calculate and print the interest, principal, and balance per month
+    printf("Month\tInterest\tPrincipal\tBalance\n");
+    printf("---------------------------------------------\n");
+    while (balance > 0) {
+        float interest = balance * interestRate; // Calculate the interest
+        float principal = monthlyPayment - interest; // Calculate the principal
+        balance -= principal; // Calculate the new balance
+
+        if (balance < 0) {
+            principal += balance; // Adjust the principal for the final payment
+            balance = 0; // Set the balance to zero for the final payment
+        }
+
+        totalInterest += interest; // Update the total interest paid
+        months++; // Increment the number of months
+
+        if (months % 12 == 0) {
+            years++; // Increment the number of years
+        }
+
+        printf("%d\t%.2f\t\t%.2f\t\t%.2f\n", months, interest, principal, balance);
+    }
+
+    // Print the number of years and months to pay back the loan and the total interest paid
+    printf("\nIt will take %d years and %d months to pay back the loan.\n", years, months % 12);
+    printf("Total interest paid: $%.2f\n", totalInterest);
+
+    return 0;
+}
+
+OUTPUT-
+Month   Interest        Principal       Balance
+---------------------------------------------
+1       30.00           55.00           2945.00
+2       29.45           55.55           2889.45
+3       28.89           56.11           2833.34
+4       28.33           56.67           2776.68
+5       27.77           57.23           2719.44
+6       27.19           57.81           2661.64
+7       26.62           58.38           2603.26
+8       26.03           58.97           2544.29
+9       25.44           59.56           2484.73
+10      24.85           60.15           2424.58
+11      24.25           60.75           2363.82
+12      23.64           61.36           2302.46
+13      23.02           61.98           2240.49
+14      22.40           62.60           2177.89
+15      21.78           63.22           2114.67
+16      21.15           63.85           2050.82
+17      20.51           64.49           1986.33
+18      19.86           65.14           1921.19
+19      19.21           65.79           1855.40
+20      18.55           66.45           1788.95
+21      17.89           67.11           1721.84
+22      17.22           67.78           1654.06
+23      16.54           68.46           1585.60
+24      15.86           69.14           1516.46
+25      15.16           69.84           1446.62
+26      14.47           70.53           1376.09
+27      13.76           71.24           1304.85
+28      13.05           71.95           1232.90
+29      12.33           72.67           1160.23
+30      11.60           73.40           1086.83
+31      10.87           74.13           1012.70
+32      10.13           74.87           937.83
+33      9.38            75.62           862.20
+34      8.62            76.38           785.83
+35      7.86            77.14           708.68
+36      7.09            77.91           630.77
+37      6.31            78.69           552.08
+38      5.52            79.48           472.60
+39      4.73            80.27           392.33
+40      3.92            81.08           311.25
+41      3.11            81.89           229.36
+42      2.29            82.71           146.66
+43      1.47            83.53           63.12
+44      0.63            63.12           0.00
+
+It will take 3 years and 8 months to pay back the loan.
+Total interest paid: $718.75
