@@ -1,0 +1,160 @@
+INPUT-
+#include <stdio.h>
+
+int main() {
+    int level_count[5] = {0, 0, 0, 0, 0};
+    int major_count[7] = {0, 0, 0, 0, 0, 0, 0};
+    int level_major_count[5][7] = {0};
+    int total_students = 1200;
+    int level, major;
+
+    for (int i = 0; i < total_students; i++) {
+        printf("Enter the class level of student %d: ", i+1);
+        scanf("%d", &level);
+        level_count[level]++;
+
+        printf("Enter the major of student %d: ", i+1);
+        scanf("%d", &major);
+        if (major != 0) {
+            major_count[major]++;
+            level_major_count[level][major]++;
+        }
+    }
+
+    printf("\nNumber of students in each level:\n");
+    for (int i = 1; i <= 4; i++) {
+        printf("Level %d: %d students\n", i, level_count[i]);
+    }
+
+    printf("\nNumber of students in each major:\n");
+    for (int i = 1; i <= 7; i++) {
+        printf("Major %d: %d students\n", i, major_count[i]);
+    }
+
+    printf("\nNumber of students in each level for each major:\n");
+    for (int i = 1; i <= 4; i++) {
+        for (int j = 1; j <= 7; j++) {
+            printf("Level %d, Major %d: %d students\n", i, j, level_major_count[i][j]);
+        }
+    }
+
+    return 0;
+}
+
+OUTPUT-
+Enter the class level of student 1: 10
+Enter the major of student 1: 5
+Enter the class level of student 2: 10
+Enter the major of student 2: 10
+Enter the class level of student 3: 15
+Enter the major of student 3: 15
+Enter the class level of student 4: 20
+Enter the major of student 4: 25
+Enter the class level of student 5: 30
+Enter the major of student 5: 35
+Enter the class level of student 6: 40
+Enter the major of student 6: 45
+Enter the class level of student 7: 46
+Enter the major of student 7: 47
+Enter the class level of student 8: 48
+Enter the major of student 8: 49
+Enter the class level of student 9: 50
+Enter the major of student 9: 51
+Enter the class level of student 10: 52
+Enter the major of student 10: 53
+Enter the class level of student 11: 54
+Enter the major of student 11: 55
+Enter the class level of student 12: 56
+Enter the major of student 12: 57
+Enter the class level of student 13: 58
+Enter the major of student 13: 59
+Enter the class level of student 14: 60
+Enter the major of student 14: 61
+Enter the class level of student 15: 62
+Enter the major of student 15: 63
+Enter the class level of student 16: 64
+Enter the major of student 16: 65
+Enter the class level of student 17: 66
+Enter the major of student 17: 67
+Enter the class level of student 18: 68
+Enter the major of student 18: 69
+Enter the class level of student 19: 70
+Enter the major of student 19: 71
+Enter the class level of student 20: 72
+Enter the major of student 20: 73
+Enter the class level of student 21: 74
+Enter the major of student 21: 75
+Enter the class level of student 22: 76
+Enter the major of student 22: 77
+Enter the class level of student 23: 78
+Enter the major of student 23: 79
+Enter the class level of student 24: 80
+Enter the major of student 24: 81
+Enter the class level of student 25: 82
+Enter the major of student 25: 83
+Enter the class level of student 26: 8
+Enter the major of student 26: 85
+Enter the class level of student 27: 86
+Enter the major of student 27: 87
+Enter the class level of student 28: 88
+Enter the major of student 28: 89
+Enter the class level of student 29: 90
+Enter the major of student 29: 91
+Enter the class level of student 30: 92
+Enter the major of student 30: 93
+Enter the class level of student 31: 94
+Enter the major of student 31: 95
+Enter the class level of student 32: 96
+Enter the major of student 32: 97
+Enter the class level of student 33: 98
+Enter the major of student 33: 99
+Enter the class level of student 34: 100
+Enter the major of student 34: 1
+Enter the class level of student 35: 2
+Enter the major of student 35: 3
+Enter the class level of student 36: 4
+Enter the major of student 36: 5
+Enter the class level of student 37: 6
+Enter the major of student 37: 7
+Enter the class level of student 38: 8
+Enter the major of student 38: 9
+Enter the class level of student 39: 10
+Enter the major of student 39: 11
+Enter the class level of student 40: 12
+Enter the major of student 40: 13
+Enter the class level of student 41: 14
+Enter the major of student 41: 15
+Enter the class level of student 42: 16
+Enter the major of student 42: 17
+Enter the class level of student 43: 18
+Enter the major of student 43: 19
+Enter the class level of student 45: 20
+Enter the major of student 45: 21
+Enter the class level of student 46: 22
+Enter the major of student 46: 23
+Enter the class level of student 47: 24
+Enter the major of student 47: 24
+Enter the class level of student 48: 25
+Enter the major of student 48: 26
+Enter the class level of student 49: 27
+Enter the major of student 49: 28
+Enter the class level of student 50: 29
+Enter the major of student 50: 30
+Enter the class level of student 51: 31
+Enter the major of student 51: 32
+Enter the class level of student 52: 33
+Enter the major of student 52: 34
+Enter the class level of student 53: 35
+Enter the major of student 53: 36
+Enter the class level of student 54: 37
+Enter the major of student 54: 38
+Enter the class level of student 55: 4
+Enter the major of student 55: 4
+Enter the class level of student 56: 4
+Enter the major of student 56: 4
+Enter the class level of student 57: 4
+Enter the major of student 57: 44
+Enter the class level of student 58:
+4
+Enter the major of student 58: 4
+Enter the class level of student 59: 4
