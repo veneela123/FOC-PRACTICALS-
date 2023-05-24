@@ -1,0 +1,31 @@
+INPUT-
+// Include necessary headers
+
+// Define structures or arrays to store questionnaire data
+
+// Declare variables
+int totalSalary = 0;
+int count = 0;
+
+// Read data from questionnaires
+// Store data in appropriate variables or structures
+
+// Loop through all questionnaires
+for (int i = 0; i < numQuestionnaires; i++) {
+    // Retrieve data for each alumnus from the questionnaire
+    
+    // Check desired sets of items (e.g., gender and college major)
+    if (matchesDesiredCriteria(alumnusData, desiredCriteria1) && matchesDesiredCriteria(alumnusData, desiredCriteria2)) {
+        // Add salary to total salary and increment count
+        totalSalary += alumnusData.salary;
+        count++;
+    }
+}
+
+// Calculate average salary
+float averageSalary = (float)totalSalary / count;
+
+// Output the average salary
+printf("Average Salary: %.2f\n", averageSalary);
+
+OUTPUT-
