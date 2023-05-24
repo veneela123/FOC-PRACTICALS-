@@ -1,0 +1,96 @@
+INPUT-
+#include <stdio.h>
+
+#define NUM_DAYS 14
+
+int main() {
+    int windSpeed[NUM_DAYS];
+    int i, sum = 0;
+    int maxSpeed = 0, minSpeed = 1000;  // Assuming wind speed won't exceed 1000 mph
+
+    // Input the wind speeds for each day
+    printf("Enter the fastest wind speed for each day:\n");
+    for (i = 0; i < NUM_DAYS; i++) {
+        printf("Day %d: ", i + 1);
+        scanf("%d", &windSpeed[i]);
+        sum += windSpeed[i];
+        
+        // Update the maximum and minimum wind speeds
+        if (windSpeed[i] > maxSpeed) {
+            maxSpeed = windSpeed[i];
+        }
+        if (windSpeed[i] < minSpeed) {
+            minSpeed = windSpeed[i];
+        }
+    }
+
+    // Calculate the average wind speed
+    float averageSpeed = (float)sum / NUM_DAYS;
+
+    printf("\nAverage wind speed over two weeks: %.2f mph\n", averageSpeed);
+    printf("Highest wind speed: %d mph (Day ", maxSpeed);
+    
+    // Find the day(s) with the highest wind speed
+    for (i = 0; i < NUM_DAYS; i++) {
+        if (windSpeed[i] == maxSpeed) {
+            printf("%d ", i + 1);
+        }
+    }
+    
+    printf(")\n");
+    printf("Lowest wind speed: %d mph (Day ", minSpeed);
+
+    // Find the day(s) with the lowest wind speed
+    for (i = 0; i < NUM_DAYS; i++) {
+        if (windSpeed[i] == minSpeed) {
+            printf("%d ", i + 1);
+        }
+    }
+
+    printf(")\n");
+
+    // Calculate the difference between the highest wind speed and each day's average
+    printf("Difference between highest wind speed and each day's average:\n");
+    for (i = 0; i < NUM_DAYS; i++) {
+        int difference = maxSpeed - windSpeed[i];
+        printf("Day %d: %d mph\n", i + 1, difference);
+    }
+
+    return 0;
+}
+OUTPUT-
+Enter the fastest wind speed for each day:
+Day 1: 5
+Day 2: 10
+Day 3: 20
+Day 4: 30
+Day 5: 40
+Day 6: 50
+Day 7: 60
+Day 8: 70
+Day 9: 80
+Day 10: 90
+Day 11: 45
+Day 12: 50
+Day 13: 40
+Day 14: 35
+
+Average wind speed over two weeks: 44.64 mph
+Highest wind speed: 90 mph (Day 10 )
+Lowest wind speed: 5 mph (Day 1 )
+Difference between highest wind speed and each day's average:
+Day 1: 85 mph
+Day 2: 80 mph
+Day 3: 70 mph
+Day 4: 60 mph
+Day 5: 50 mph
+Day 6: 40 mph
+Day 7: 30 mph
+Day 8: 20 mph
+Day 9: 10 mph
+Day 10: 0 mph
+Day 11: 45 mph
+Day 12: 40 mph
+Day 13: 50 mph
+Day 14: 55 mph
+
